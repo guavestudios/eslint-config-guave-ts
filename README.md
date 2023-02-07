@@ -1,4 +1,6 @@
 # Eslint Config Guave
+This config covers
+Typescript, Javascript and Vue files
 
 ### Install
 
