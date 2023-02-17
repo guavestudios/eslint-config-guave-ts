@@ -28,3 +28,25 @@ For example:
   }
 }
 ```
+
+### Add Husky and stage-lint to enforce lintstyle on commit
+```
+npm i -D husky lint-staged
+```
+add to packge json
+```
+"scripts": {
+  "prepare": "husky install"
+},
+"lint-staged": {
+    "*.{js,vue,ts}": "eslint",
+    "*.{css,vue}": "stylelint"
+  }
+```
+run husky first time
+```
+npm run prepare
+npx husky add .husky/pre-commit "npm test"
+git add .husky/pre-commit
+```
+Now you can commit hte pre-commit hook
