@@ -6,10 +6,10 @@ module.exports = {
     '@vue/eslint-config-standard-with-typescript/allow-tsx-in-vue'
   ],
   rules: {
-    'comma-dangle': ['error', 'only-multiline'],
-    '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
-    'n/no-callback-literal': 'off',
     'vue/multi-word-component-names': 'off',
     'vue/block-lang': 'off',
+    'comma-dangle': ['error', 'only-multiline'],
+    '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
+    'n/no-callback-literal': 'off'
   }
 }
