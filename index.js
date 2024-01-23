@@ -10,6 +10,11 @@ module.exports = {
     'vue/block-lang': 'off',
     'comma-dangle': ['error', 'only-multiline'],
     '@typescript-eslint/comma-dangle': ['error', 'only-multiline'],
-    'n/no-callback-literal': 'off'
+    'n/no-callback-literal': 'off',
+    'vue/html-indent': ['error'],
+    'vue/max-attributes-per-line': ['error'],
+    'vue/first-attribute-linebreak': ['error'],
+    'vue/html-closing-bracket-newline': ['error'],
+    'vue/html-closing-bracket-spacing': ['error'],
   }
 }
