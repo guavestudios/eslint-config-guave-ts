@@ -59,3 +59,9 @@ npx husky add .husky/pre-commit "npm test"
 git add .husky/pre-commit
 ```
 Now you can commit hte pre-commit hook
+
+### Development
+eslint-inspector is installed so you can use
+```
+npm run dev
+```

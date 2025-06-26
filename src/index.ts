@@ -16,6 +16,7 @@ interface GuaveLinterOptions {
 export async function guave (options: GuaveLinterOptions) {
   return [
     {
+      name: 'guave/base',
       languageOptions: {
         ecmaVersion: 2022,
         globals: {
@@ -45,6 +46,7 @@ export async function guave (options: GuaveLinterOptions) {
     ...(options.stylistic ? await stylistic() : []),
     ...(options.vue ? await vue() : []),
     {
+      name: 'project/custom',
       rules: {
         ...(options.overrides ?? {})
       },

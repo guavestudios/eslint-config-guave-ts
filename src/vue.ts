@@ -10,6 +10,7 @@ export async function vue () {
   return [
     ...pluginVue.configs['flat/recommended'],
     {
+      name: 'guave/vue',
       rules: {
         'vue/multi-word-component-names': 'off',
         'vue/block-lang': 'off',

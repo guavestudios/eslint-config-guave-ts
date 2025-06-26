@@ -19,6 +19,7 @@ export async function stylistic () {
   return [
     config,
     {
+      name: 'guave/stylistic',
       rules: {
         'style/space-before-function-paren': ['error', 'always'],
         'style/member-delimiter-style': ['error', {

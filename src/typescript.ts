@@ -11,6 +11,7 @@ export async function typescript () {
   return [
     ...tseslint.configs.recommended,
     {
+      name: 'guave/typescript',
       rules: {
         '@typescript-eslint/no-explicit-any': 'off',
       }
