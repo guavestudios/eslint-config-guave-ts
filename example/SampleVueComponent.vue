@@ -1,8 +1,8 @@
 <template>
-  <div>test{{a}}</div>
+  <div>test{{ a }}</div>
 </template>
 
 <script setup lang="ts">
-  const a = 1
+const a = 1
 
 </script>

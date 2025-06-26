@@ -2,18 +2,25 @@
 This config covers
 Typescript, Javascript and Vue files
 
+It is heavely inspired and modified version of https://github.com/antfu/eslint-config, a truely amazing base to start a general linter
+Shoutout to @antfu for this great work!
+
 ### Install
 
 ```bash
 npm install -D eslint github:github.com:guavestudios/eslint-config-guave-ts
 ```
 
-### Config `.eslintrc`
+### Config `eslint.config.ts`
 
-```json
-{
-  "extends": "eslint-config-guave-ts"
-}
+```js
+import { guave } from 'eslint-config-guave-ts'
+
+export default [
+  ...await guave({
+    vue: true
+  })
+]
 ```
 
 ### Add script for package.json
