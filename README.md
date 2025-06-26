@@ -18,7 +18,9 @@ import { guave } from 'eslint-config-guave-ts'
 
 export default [
   ...await guave({
-    vue: true
+    vue: true,
+    typescript: true,
+    stylistic: true,
   })
 ]
 ```
@@ -30,13 +32,13 @@ For example:
 ```json
 {
   "scripts": {
-    "lint:js": "eslint --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
-    "lint:js:fix": "eslint --fix --ext \".ts,.js,.vue\" --ignore-path .gitignore .",
+    "lint:js": "eslint",
+    "lint:js:fix": "eslint --fix",
   }
 }
 ```
 
-### Add Husky and stage-lint to enforce lintstyle on commit
+### (DOCU OUTDATED) Add Husky and stage-lint to enforce lintstyle on commit
 ```
 npm i -D husky lint-staged
 ```
