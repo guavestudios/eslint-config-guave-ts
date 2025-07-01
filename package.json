@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-guave-ts",
   "type": "module",
-  "version": "0.3",
+  "version": "0.3.0",
   "description": "Guave ES Lint 9 config",
   "author": "office@guavestudios.com  ",
   "license": "MIT",
