@@ -5,7 +5,7 @@ export default [
     vue: true,
     typescript: true,
     stylistic: true,
-    ignores: ['**/node_modules/**'],
+    ignores: ['**/node_modules/**', 'dist/*'],
     overrides: {
 
     }

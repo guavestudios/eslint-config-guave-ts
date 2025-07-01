@@ -4,6 +4,13 @@ function named (b: Blub) {
   if (b.name === 'Blub') {
     // Do something
   }
+
+  try {
+    throw new Error('Test error')
+  } catch {
+    // no empty blocks
+  }
+
   return function () {
     return () => {
       return () => 1

@@ -4,6 +4,7 @@ import { stylistic } from './stylistic'
 import { typescript } from './typescript'
 import { TypedFlatConfigItem } from './types'
 import globals from 'globals'
+import { nuxt } from './nuxt'
 
 interface GuaveLinterOptions {
   typescript?: boolean
@@ -11,10 +12,18 @@ interface GuaveLinterOptions {
   vue?: boolean
   ignores?: string[]
   overrides?: TypedFlatConfigItem['rules']
+  nuxt?: {
+    nuxtFnc: () => Promise<any>
+  }
 }
 
 export async function guave (options: GuaveLinterOptions) {
   return [
+    {
+      name: 'guave/ignores',
+      ignores: options.ignores ?? [],
+    },
+    ...(options.nuxt ? await nuxt(options.nuxt) : []),
     {
       name: 'guave/base',
       languageOptions: {
@@ -36,7 +45,6 @@ export async function guave (options: GuaveLinterOptions) {
         },
         sourceType: 'module',
       },
-      ignores: options.ignores ?? [],
       rules: {
         'n/no-callback-literal': 'off',
       }

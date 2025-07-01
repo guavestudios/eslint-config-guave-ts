@@ -22,17 +22,21 @@ export async function stylistic () {
       name: 'guave/stylistic',
       rules: {
         'style/space-before-function-paren': ['error', 'always'],
+        'style/brace-style': ['error', '1tbs'],
         'style/member-delimiter-style': ['error', {
           multiline: {
             delimiter: 'none',
             requireLast: false
           },
           singleline: {
-            delimiter: 'semi',
+            delimiter: 'comma',
             requireLast: false
           },
           multilineDetection: 'brackets'
-        }]
+        }],
+        'style/spaced-comment': ['error', 'always'],
+        'style/arrow-parens': ['error', 'as-needed'],
+        'style/quote-props': ['error', 'as-needed'],
       }
     }
   ]
