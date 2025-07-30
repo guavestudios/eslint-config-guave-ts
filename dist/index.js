@@ -425,6 +425,30 @@ async function vue() {
 }
 
 //#endregion
+//#region src/jest.ts
+async function jest({ dir = "tests" }) {
+	const [pluginJest] = await Promise.all([interopDefault(import("eslint-plugin-jest"))]);
+	return [{
+		name: "guave/tests/jest",
+		files: [
+			"**/*.spec.{ts,js}",
+			"**/*.e2e-spec.{ts,js}",
+			"**/*.test.{ts,js}",
+			dir + "/**/*.{ts,js}"
+		],
+		plugins: { jest: pluginJest },
+		languageOptions: { globals: pluginJest.environments.globals.globals },
+		rules: {
+			"jest/no-disabled-tests": "warn",
+			"jest/no-focused-tests": "error",
+			"jest/no-identical-title": "error",
+			"jest/prefer-to-have-length": "warn",
+			"jest/valid-expect": "error"
+		}
+	}];
+}
+
+//#endregion
 //#region src/stylistic.ts
 async function stylistic() {
 	const [pluginStylistic] = await Promise.all([interopDefault(import("@stylistic/eslint-plugin"))]);
@@ -539,6 +563,7 @@ async function guave(options) {
 		...options.typescript ? await typescript() : [],
 		...options.stylistic ? await stylistic() : [],
 		...options.vue ? await vue() : [],
+		...options.jest ? await jest(options.jest) : [],
 		{
 			name: "project/custom",
 			rules: { ...options.overrides ?? {} }

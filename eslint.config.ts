@@ -5,6 +5,9 @@ export default [
     vue: true,
     typescript: true,
     stylistic: true,
+    jest: {
+      dir: 'tests',
+    },
     ignores: ['**/node_modules/**', 'dist/*'],
     overrides: {
 

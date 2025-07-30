@@ -16,6 +16,9 @@ interface GuaveLinterOptions {
   typescript?: boolean;
   stylistic?: boolean;
   vue?: boolean;
+  jest?: {
+    dir?: string;
+  };
   ignores?: string[];
   overrides?: TypedFlatConfigItem['rules'];
   nuxt?: {

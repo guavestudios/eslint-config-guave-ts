@@ -1,5 +1,6 @@
 import eslint from '@eslint/js'
 import { vue } from './vue'
+import { jest } from './jest'
 import { stylistic } from './stylistic'
 import { typescript } from './typescript'
 import { TypedFlatConfigItem } from './types'
@@ -10,6 +11,9 @@ interface GuaveLinterOptions {
   typescript?: boolean
   stylistic?: boolean
   vue?: boolean
+  jest?: {
+    dir?: string
+  }
   ignores?: string[]
   overrides?: TypedFlatConfigItem['rules']
   nuxt?: {
@@ -53,6 +57,7 @@ export async function guave (options: GuaveLinterOptions) {
     ...(options.typescript ? await typescript() : []),
     ...(options.stylistic ? await stylistic() : []),
     ...(options.vue ? await vue() : []),
+    ...(options.jest ? await jest(options.jest) : []),
     {
       name: 'project/custom',
       rules: {
